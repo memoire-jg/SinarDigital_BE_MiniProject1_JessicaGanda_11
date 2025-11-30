@@ -13,7 +13,7 @@ export const getFacts = (req, res) => {
 
 export const createFacts = (req, res) => {
     const newId = facts[facts.length - 1].id + 1;
-    const newFact = Object.assign({ productId: newId }, req.body);
+    const newFact = Object.assign({ id: newId }, req.body);
     facts.push(newFact);
 
     fs.writeFile(filePath, JSON.stringify(facts), (err) => {
